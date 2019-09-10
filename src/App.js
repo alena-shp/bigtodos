@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import BigList from './components/BigList'
 
 function App() {
+  let todos = [
+    { id: 1, end: false, title: 'buy milk' },
+    { id: 2, end: false, title: 'feed the cat' },
+    { id: 3, end: false, title: 'to water flowers' },
+    { id: 4, end: false, title: 'check mail' }
+  ]
+
+  let togglesTodo = id => {
+    todos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.end = !todo.end
+      }
+      return todo
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <h1 className="header">List of important things</h1>
+      <BigList todos={todos} onToggles={togglesTodo} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

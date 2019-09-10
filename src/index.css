@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.wrapper {
+  padding-top: 200px;
+  margin: 0 auto;
+  width: 600px;
+}
+
+.header {
+  font-family: 'Varela Round', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.push {
+  background: rgb(60, 115, 187);
+  border-radius: 5px;
+  color: white;
+  border: none;
+}

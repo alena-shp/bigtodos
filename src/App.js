@@ -1,6 +1,7 @@
 import React from 'react'
-
 import BigList from './components/BigList'
+import Context from './Context/Context'
+import AddTodo from './components/AddTodo'
 
 function App() {
   const [todos, setTodos] = React.useState([
@@ -21,11 +22,34 @@ function App() {
     )
   }
 
+  let removeTodo = id => {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
+  let addTodo = title => {
+    setTodos(
+      todos.concat([
+        {
+          title,
+          id: Date.now(),
+          end: false
+        }
+      ])
+    )
+  }
+
   return (
-    <div className="wrapper">
-      <h1 className="header">List of important things</h1>
-      <BigList todos={todos} onToggles={togglesTodo} />
-    </div>
+    <Context.Provider value={{ removeTodo }}>
+      <div className="wrapper">
+        <h1 className="header">List of important things</h1>
+        <AddTodo onCreate={addTodo} />
+        {todos.length ? (
+          <BigList todos={todos} onToggles={togglesTodo} />
+        ) : (
+          <p>Nothing planned</p>
+        )}
+      </div>
+    </Context.Provider>
   )
 }
 

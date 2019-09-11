@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './AddTodo.scss'
 
 const AddTodo = ({ onCreate }) => {
   const [value, setValue] = useState('')
@@ -13,9 +14,16 @@ const AddTodo = ({ onCreate }) => {
   }
 
   return (
-    <form style={{ marginBottom: '1rem' }} onSubmit={onSubmitHandler}>
-      <input value={value} onChange={event => setValue(event.target.value)} />
-      <button type="submit">Add todo</button>
+    <form className="form-wrapper" onSubmit={onSubmitHandler}>
+      <input
+        value={value}
+        onChange={event => setValue(event.target.value)}
+        className="input-text"
+        placeholder="I must do..."
+      />
+      <button type="submit" className="button-push">
+        Add todo
+      </button>
     </form>
   )
 }

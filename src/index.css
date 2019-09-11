@@ -19,21 +19,33 @@ code {
   padding-top: 200px;
   margin: 0 auto;
   width: 600px;
+  position: relative;
 }
 
 .header {
-  font-family: 'Varela Round', sans-serif;
-  text-align: center;
+  font-family: 'Varela Round', sans-serif; 
+  text-shadow: #9c9c9c 1px 3px 0, #9c9c9c -1px -1px 0, 
+               #9c9c9c -1px 1px 0, #9c9c9c  1px -1px 0;
+  font-weight: 600;
+  font-size: 42px;
+  color: #f5dcee; 
   text-transform: uppercase;
+  position: absolute;
+  top: 76px;
+  
 }
 
 .push {
-  font-size: 24px;
-  background: #9c9c9c;
+  font-weight: 800;
+  font-size: 30px;
+  background: #f5dcee;
   border-radius: 50px;
-  color: white;
+  color: #9c9c9c;
   border: none;
   outline: none;
+  position: absolute;
+  top: 6px;
+  right: 14px;
 }
 
 .done {

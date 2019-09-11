@@ -12,13 +12,14 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '.5rem 1rem',
+    padding: '.6rem 1.5rem',
     border: '1px solid #ccc',
     borderRadius: '15px',
-    marginBottom: '.5rem'
+    marginBottom: '.6rem',
+    position: 'relative'
   },
   input: {
-    marginRight: '1rem'
+    marginRight: '1.5rem'
   }
 }
 

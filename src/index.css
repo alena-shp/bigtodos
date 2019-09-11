@@ -28,10 +28,12 @@ code {
 }
 
 .push {
-  background: rgb(60, 115, 187);
-  border-radius: 5px;
+  font-size: 24px;
+  background: #9c9c9c;
+  border-radius: 50px;
   color: white;
   border: none;
+  outline: none;
 }
 
 .done {

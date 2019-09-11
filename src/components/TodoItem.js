@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import Context from '../Context/Context'
+import './TodoItem.scss'
 
 const styles = {
   li: {
-    background: '#d9e2ff',
+    background: '#f5dcee',
     color: '#060c38',
     fontFamily: '"Shadows Into Light", cursive',
     fontSize: '24px',
@@ -13,7 +14,7 @@ const styles = {
     alignItems: 'center',
     padding: '.5rem 1rem',
     border: '1px solid #ccc',
-    borderRadius: '4px',
+    borderRadius: '15px',
     marginBottom: '.5rem'
   },
   input: {
@@ -30,18 +31,23 @@ const TodoItem = props => {
     classes.push('done')
   }
 
+  const checkboxId = `checkbox-${props.todo.id}`
+
   return (
     <li style={styles.li}>
-      <span className={classes.join(' ')}>
+      <span className={classes.join(' ') + ' checkbox'}>
         <input
+          id={checkboxId}
           type="checkbox"
           checked={props.todo.end}
           style={styles.input}
           onChange={() => props.onChange(props.todo.id)}
         />
-        <strong>{props.num + 1}</strong>
-        &nbsp;
-        {props.todo.title}
+        <label className="label" htmlFor={checkboxId}>
+          <strong>{props.num + 1 + ')'}</strong>
+          &nbsp;
+          {props.todo.title}
+        </label>
       </span>
       <button className="push" onClick={() => removeTodo(props.todo.id)}>
         &times;

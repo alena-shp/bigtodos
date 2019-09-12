@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import Context from '../Context/Context'
+import Context from '../../Context/Context'
 import './TodoItem.scss'
 
 const styles = {

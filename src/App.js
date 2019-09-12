@@ -1,7 +1,7 @@
 import React from 'react'
-import BigList from './components/BigList'
+import BigList from './components/BigList/BigList'
 import Context from './Context/Context'
-import AddTodo from './components/AddTodo'
+import AddTodo from './components/AddTodo/AddTodo'
 
 function App() {
   const [todos, setTodos] = React.useState([
@@ -46,7 +46,7 @@ function App() {
         {todos.length ? (
           <BigList todos={todos} onToggles={togglesTodo} />
         ) : (
-          <p>Nothing planned</p>
+          <p className="no-text">Nothing planned</p>
         )}
       </div>
     </Context.Provider>

@@ -1,17 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import TodoItem from './TodoItem'
+import TodoItem from '../TodoItem/TodoItem'
+import './BigList.scss'
 
-const styles = {
-  ul: {
-    listStyle: 'none',
-    margin: 0,
-    padding: 0
-  }
-}
 const BigList = props => {
   return (
-    <ul style={styles.ul}>
+    <ul className="list">
       {props.todos.map((e, i) => (
         <TodoItem key={e.id} todo={e} num={i} onChange={props.onToggles} />
       ))}
